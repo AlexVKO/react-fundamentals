@@ -6,6 +6,8 @@ class App extends React.Component {
     this.state = {
       text: "this is the state text"
     }
+
+    this.update = this.update.bind(this)
   }
 
   update(e){
@@ -16,7 +18,7 @@ class App extends React.Component {
     let text = this.props.text
     return (
             <div>
-              <input type="text" onChange={this.update.bind(this)} />
+              <input type="text" onChange={this.update} />
               <h1>{this.state.text}</h1>
             </div>
     )
