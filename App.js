@@ -13,12 +13,16 @@ App.propTypes = {
   cat: React.PropTypes.number.isRequired
 }
 
+App.defaultProps = {
+  text: "this is the default value of props"
+}
+
+ReactDOM.render(
+    <App cat={5}/>,
+    document.getElementById('app')
+  )
 // Stateless function
 // const App = () =>  <h1> Its the same </h1>
 
 // export default App
 
-ReactDOM.render(
-    <App text="this is the props" cat={5}/>,
-    document.getElementById('app')
-  )
