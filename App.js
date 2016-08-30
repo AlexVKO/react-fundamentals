@@ -8,12 +8,17 @@ class App extends React.Component {
   }
 }
 
+App.propTypes = {
+  txt: React.PropTypes.string,
+  cat: React.PropTypes.number.isRequired
+}
+
 // Stateless function
 // const App = () =>  <h1> Its the same </h1>
 
 // export default App
 
 ReactDOM.render(
-    <App text="this is the props" />,
+    <App text="this is the props" cat={5}/>,
     document.getElementById('app')
   )
