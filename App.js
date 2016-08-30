@@ -14,9 +14,9 @@ class App extends React.Component {
 
   update(e){
     this.setState({
-      red: ReactDOM.findDOMNode(this.refs.red).value,
-      green: ReactDOM.findDOMNode(this.refs.green).value,
-      blue: ReactDOM.findDOMNode(this.refs.blue).value
+      red: ReactDOM.findDOMNode(this.refs.red.refs.inp).value,
+      green: ReactDOM.findDOMNode(this.refs.green.refs.inp).value,
+      blue: ReactDOM.findDOMNode(this.refs.blue.refs.inp).value
     })
   }
 
@@ -39,7 +39,9 @@ class App extends React.Component {
 class Slider extends React.Component {
   render() {
     return (
-      <input type="range" min="0" max="255" onChange={this.props.update} />
+      <div>
+        <input ref="inp" type="range" min="0" max="255" onChange={this.props.update} />
+      </div>
     )
   }
 }
