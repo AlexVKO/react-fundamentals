@@ -13,11 +13,11 @@ class App extends React.Component {
   }
 
   componentWillMount(){
-    console.log('mounting')
+    this.setState({m:2})
   }
 
   componentDidMount(){
-    console.log("mounted")
+    console.log(ReactDOM.findDOMNode(this))
   }
 
   componentWillUnmount(){
@@ -26,7 +26,7 @@ class App extends React.Component {
 
   render() {
     console.log('rendering')
-    return <button onClick={this.update}>{this.state.val}</button>
+    return <button onClick={this.update}>{this.state.val * this.state.m}</button>
   }
 }
 
@@ -36,6 +36,7 @@ class Wrapper extends React.Component {
   }
 
   mount(){
+    console.log('mounting')
     ReactDOM.render(<App />, document.getElementById('a'))
   }
 
@@ -43,7 +44,13 @@ class Wrapper extends React.Component {
     ReactDOM.unmountComponentAtNode(document.getElementById('a'))
   }
 
+  // componentDidMount(){
+  //   console.log('123')
+  //   this.mount()
+  // }
+
   render(){
+
     return (
             <div>
               <button onClick={this.unmount.bind(this)}>unmount</button>
